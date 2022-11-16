@@ -11,22 +11,18 @@ void swap(list_t *stack)
 
 list_t *rotate(list_t *stack)
 {
-    
-    if (!stack)
-        return NULL;
-    
     list_t *tmp;
     list_t *head;
     
-    head = stack;
+    head = stack; // vaut le premier maillon
     tmp = stack->next;
-    while (stack->next)
+    while(stack->next)
     {
         stack = stack->next;
     }
-    stack->next = head;
-    head->next = NULL;
-    stack = tmp;
+    stack->next = head; // vaut la tete de ma liste une fois parcouru
+    head->next = NULL; // ma tete pointe ver null 
+    stack = tmp; // 
 
     return stack;
     // stack *last;

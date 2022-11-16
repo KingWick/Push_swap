@@ -14,8 +14,13 @@ typedef struct list_s
 list_t *push_stack(list_t *st, char *s);
 list_t *freestack(list_t *st);
 int isempty(list_t *st);
-void printstack(list_t *st);
+void *printstack(list_t *st);
 
+
+//--parsing--//
+
+int parsing(char *av);
+void error(list_t *stack);
 
 //------mouv-----//
 

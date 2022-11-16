@@ -1,7 +1,4 @@
 #include "pile.h"
-#include <stdio.h>
-#include <stdlib.h>
-
 
 list_t *freestack(list_t *stack)
 {
@@ -45,7 +42,7 @@ list_t *push_stack(list_t *st, char *s)
         {
             end = end->next;
         }
-         end->next = element;
+        end->next = element;
     }
 
     //  si st == NULL
@@ -57,17 +54,14 @@ list_t *push_stack(list_t *st, char *s)
     return(st); // j'return ma stack
 }
 
-void printstack(list_t *stack)
+void *printstack(list_t *stack)
 {
     if (isempty(stack))
-    {
-        printf("rien a afficher pile vide");
-        return;
-    }
+        return 0;
     while(stack)
     {
         printf("[%d]->", stack->nbr);
         stack = stack->next;
     }
-    printf("\n");
+    return 0;
 }

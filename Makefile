@@ -8,7 +8,8 @@ OBJS  = ${SRCS:.c=.o}
 
 SRCS = srcs/main.c \
 	   srcs/mouv.c \
-	   srcs/pile.c
+	   srcs/pile.c \
+	   srcs/pars.c
 
 %.o:%.c
 	@gcc $(FLAGS) -I $(INCLUDE) -c $< -o $@

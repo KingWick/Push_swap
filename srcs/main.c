@@ -3,26 +3,34 @@
 int main(int ac, char **av)
 {
     list_t *list = NULL;
-    free(list);
-    if (ac < 2)
-        return 0;
+    int i = 0;
+    //printf("\nadresse de push->%p--1apper\n", push_stack(list, av[i]));
+    //printf("\nadresse de push->%p--2appel\n", push_stack(list, av[i]));
+
     //list = newstack();
     // if (isempty(list))
     //     printf("list vide\n");
     // else
     //     printf("liste rempli\n");
-	int i = 1;
-	while (av[i])
-	{
-		list = push_stack(list, av[i]);
-		i++;
-	}
+    // printf("\nadresse de push->%p--3appel\n", push_stack(list, av[i]));
+    // printf("\nadresse de push->%p--\n", push_stack(list, av[i])); 
+	ac = ac - 1;
+    while (i < ac)
+    {
+        if(parsing(av[i + 1]) == 1)
+            error(list);
+        list = push_stack(list,av[i + 1]);
+        i++;
+    }
+    //parsing(i);
     //swap(list);
-    list = rotate(list);
-    //list = push_stack(list,14);
-    //list = push_stack(list,47);
-	//list = push_stack(list,11);
-	//list = push_stack(list,65);
+    list = rotate(list);  
+
+    // printf("%p", printstack(list));
+    // printf("%p", printstack(list));
+    // printf("%p", printstack(list));
+    // printf("%p", printstack(list));
+   
     printstack(list);
 
     //  if (isempty(list))
