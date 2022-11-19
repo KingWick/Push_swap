@@ -3,7 +3,7 @@
 list_t *freestack(list_t *stack)
 {
     list_t *tmp;
-    if (isempty(stack))
+    if (isempty(stack) == 1)
         return (NULL); // on verifie que la pile est vide est on y retourne une nouvelle
     while(stack)
     {
@@ -44,13 +44,6 @@ list_t *push_stack(list_t *st, char *s)
         }
         end->next = element;
     }
-
-    //  si st == NULL
-    //  st = nouvel element
-    //  sinon
-    //  endst = derniere element de st
-    //  endstack->next = nouvel element
-    //  return st 
     return(st); // j'return ma stack
 }
 

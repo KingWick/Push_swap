@@ -13,9 +13,8 @@ typedef struct list_s
 
 list_t *push_stack(list_t *st, char *s);
 list_t *freestack(list_t *st);
+void   *printstack(list_t *st);
 int isempty(list_t *st);
-void *printstack(list_t *st);
-
 
 //--parsing--//
 
@@ -24,7 +23,7 @@ void error(list_t *stack);
 
 //------mouv-----//
 
-void swap(list_t *st);
+list_t *swap(list_t *st);
 list_t *rotate(list_t *st);
 
 #endif

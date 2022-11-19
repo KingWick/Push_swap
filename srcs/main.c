@@ -4,43 +4,30 @@ int main(int ac, char **av)
 {
     list_t *list = NULL;
     int i = 0;
-    //printf("\nadresse de push->%p--1apper\n", push_stack(list, av[i]));
-    //printf("\nadresse de push->%p--2appel\n", push_stack(list, av[i]));
-
-    //list = newstack();
-    // if (isempty(list))
-    //     printf("list vide\n");
-    // else
-    //     printf("liste rempli\n");
-    // printf("\nadresse de push->%p--3appel\n", push_stack(list, av[i]));
-    // printf("\nadresse de push->%p--\n", push_stack(list, av[i])); 
-	ac = ac - 1;
+    ac = ac - 1; //pour avoir le bon nombre d'arguments (On extrait l'exec) (evite de boucler une fois de plus)
     while (i < ac)
     {
-        if(parsing(av[i + 1]) == 1)
+       // printf("[%d]", parsing(av[i]));
+        if(parsing(av[i + 1]) == 1) // On saute l'exec on passe a largument suivant sinon error il va parser sur l'exec
             error(list);
-        list = push_stack(list,av[i + 1]);
+        list = push_stack(list,av[i + 1]);;
         i++;
+        //printf("[%s]Valeur de av[i]\n", av[i + 1]);
     }
-    //parsing(i);
-    //swap(list);
-    list = rotate(list);  
+    //list = rotate(list);
+    list = swap(list);
 
-    // printf("%p", printstack(list));
-    // printf("%p", printstack(list));
-    // printf("%p", printstack(list));
-    // printf("%p", printstack(list));
-   
     printstack(list);
-
-    //  if (isempty(list))
-    //     printf("list vide\n");
-    // else
-    //     printf("liste rempli\n");
+    if (isempty(list))
+        printf("list vide\n");
+    else
+        printf("liste rempli\n");
     
-    list = freestack(list);
-    //  if (isempty(list))
-    //     printf("list vide\n");
-    // else
-    //     printf("liste rempli\n");
+   list = freestack(list);
+
+     if (isempty(list))
+        printf("list vide\n");
+    else
+        printf("liste rempli\n");
+    return 0;
 }
