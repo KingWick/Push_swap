@@ -23,9 +23,9 @@ int parsing(char *av)
   return 0;
 }
 
-void error(list_t *stack)
+void error(list_t *st)
 {
     write(2,"Error\n",6);
-    freestack(stack);
+    freestack(st);
     exit (EXIT_FAILURE);
 }

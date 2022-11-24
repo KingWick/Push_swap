@@ -19,11 +19,12 @@ int isempty(list_t *st);
 //--parsing--//
 
 int parsing(char *av);
-void error(list_t *stack);
+void error(list_t *st);
 
 //------mouv-----//
 
-list_t *swap(list_t *st);
-list_t *rotate(list_t *st);
+list_t *swap(list_t *stack);
+list_t *rotate(list_t *stack);
+list_t *reverse_rotate(list_t *stack);
 
 #endif

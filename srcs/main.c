@@ -14,10 +14,12 @@ int main(int ac, char **av)
         i++;
         //printf("[%s]Valeur de av[i]\n", av[i + 1]);
     }
-    //list = rotate(list);
-    list = swap(list);
-
+    //printstack(list);
+    list = rotate(list);
+    //list = swap(list);
+    //list = reverse_rotate(list);
     printstack(list);
+
     if (isempty(list))
         printf("list vide\n");
     else
