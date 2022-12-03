@@ -2,34 +2,41 @@
 
 int main(int ac, char **av)
 {
-    list_t *list = NULL;
-    int i = 0;
-    ac = ac - 1; //pour avoir le bon nombre d'arguments (On extrait l'exec) (evite de boucler une fois de plus)
+    list_t *stack_a = NULL;
+    list_t *stack_b = NULL;
+    int i = 1; //pour avoir le bon nombre d'arguments (On extrait l'exec) (evite de boucler une fois de plus)
     while (i < ac)
     {
-       // printf("[%d]", parsing(av[i]));
-        if(parsing(av[i + 1]) == 1) // On saute l'exec on passe a largument suivant sinon error il va parser sur l'exec
-            error(list);
-        list = push_stack(list,av[i + 1]);;
+        if(parsing(av[i]) == 1)
+            error(stack_a);
+        stack_a = push_stack(stack_a,av[i]);
         i++;
-        //printf("[%s]Valeur de av[i]\n", av[i + 1]);
     }
-    //printstack(list);
-    list = rotate(list);
-    //list = swap(list);
-    //list = reverse_rotate(list);
-    printstack(list);
+  // printf("\n\n");
+    //printstack(stack_a);
+    check_order(stack_a);
+    check_doublon(stack_a);
+    stack_a = rotate(stack_a);
+   // stack_a = swap(stack_a);
+    //stack_a = reverse_rotate(stack_a);
+    //stack_a = push_st(stack_a,stack_b);
+    //stack_b = push_st(stack_a,stack_b);
 
-    if (isempty(list))
-        printf("list vide\n");
-    else
-        printf("liste rempli\n");
-    
-   list = freestack(list);
+    //printf("\n");
+    printstack(stack_a);
+    printf("\nici");
+    printstack(stack_b);
 
-     if (isempty(list))
-        printf("list vide\n");
-    else
-        printf("liste rempli\n");
+    // if (stack_a == NULL)
+    //     printf("stack_a vide\n");
+    // else
+    //     printf("liste rempli\n");
+
+    stack_a = freestack(stack_a);
+
+    // if (stack_a == NULL)
+    //     printf("\nstack_a vide\n");
+    // else
+    //     printf("liste rempli\n");
     return 0;
 }

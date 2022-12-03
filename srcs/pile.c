@@ -3,8 +3,7 @@
 list_t *freestack(list_t *stack)
 {
     list_t *tmp;
-    if (isempty(stack) == 1)
-        return (NULL); // on verifie que la pile est vide est on y retourne une nouvelle
+
     while(stack)
     {
         tmp = stack->next; // st pointant sur le maillon suivant sauvegarder dans tmp
@@ -14,47 +13,33 @@ list_t *freestack(list_t *stack)
     return(stack);
 }
 
-int isempty(list_t *st)
-{
-    if (st == NULL)
-        return (1);     //equivalent a 0 et 1 pour vrai est faux
-    else
-        return 0;
-}
-
 list_t *push_stack(list_t *st, char *s)
 {
      list_t *element;
-     list_t *end;
+     list_t *tmp;
 
      element = malloc(sizeof(*element));
      if (!element)
          return 0;
-    element->nbr = atoi(s); // mon element pointe sur nbr et je converti en int via atoi car je recoi des argument char avec le parametres argv
-    element->next = NULL; // l'element suivant de ma pile pointe maintenant vers null pour indiquer la fin de la chaine 
+    element->nbr = ft_atoi(s); 
+    element->next = NULL;
 
     if (st == NULL)
-            st = element;
-    else
+        return element;
+    tmp = st;
+    while (tmp->next)
     {
-        end = st;
-        while (end->next)
-        {
-            end = end->next;
-        }
-        end->next = element;
+        tmp = tmp->next;
     }
-    return(st); // j'return ma stack
+    tmp->next = element;
+    return(st);
 }
 
-void *printstack(list_t *stack)
+void printstack(list_t *stack)
 {
-    if (isempty(stack))
-        return 0;
     while(stack)
     {
         printf("[%d]->", stack->nbr);
         stack = stack->next;
     }
-    return 0;
 }
