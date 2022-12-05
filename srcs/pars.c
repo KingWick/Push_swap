@@ -1,4 +1,4 @@
-#include "pile.h"
+#include "../includes/pile.h"
 
 int	ft_isdigit(int c)
 {
@@ -7,7 +7,7 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-void	check_doublon(list_t *st)
+int	check_doublon(list_t *st)
 {
 	int stocknbr;
 	list_t  *list;
@@ -23,12 +23,16 @@ void	check_doublon(list_t *st)
 		while (compare)
 		{
 			if (stocknbr == compare->nbr)
+            {
 				error(st);
+                return 0;
+            }
 			compare = compare->next;
 		}
 		list = list->next;
 		element = element->next; 
 	}
+    return (0);
 }
 
 int parsing(char *av)
@@ -56,10 +60,7 @@ int    check_order(list_t *st)
         if (st->nbr < st->next->nbr && st->next != NULL)
             st = st->next;
         else
-        {
-            printf("mauvais ordre");
             return (1);
-        }
     }
     return (0);
 }

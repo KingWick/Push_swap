@@ -15,12 +15,13 @@ typedef struct list_s
 //----Stack---//
 list_t *push_stack(list_t *st, char *s);
 list_t *freestack(list_t *st);
+int    lengh_stack(list_t *st);
 void   printstack(list_t *st);
 
 //--parsing--//
 
 int     check_order(list_t *st);
-void	check_doublon(list_t *st);
+int 	check_doublon(list_t *st);
 int     parsing(char *av);
 void    error(list_t *st);
 
@@ -29,7 +30,13 @@ void    error(list_t *st);
 list_t *swap(list_t *stack);
 list_t *rotate(list_t *stack);
 list_t *reverse_rotate(list_t *stack);
-list_t  *push_st(list_t *stack_a, list_t *stack_b);
+list_t *push_st(list_t *stack_a, list_t *stack_b);
+
+//--------Trie------//
+
+void    sort_for_two(list_t *stack);
+void    sort_for_three(list_t *stack);
+
 
 //----toolbox-----//
 

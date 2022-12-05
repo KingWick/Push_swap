@@ -10,6 +10,7 @@ SRCS = srcs/main.c \
 	   srcs/mouv.c \
 	   srcs/pile.c \
 	   srcs/pars.c \
+	   srcs/trie_stack.c \
 	   srcs/toolbox.c
 
 %.o:%.c

@@ -1,4 +1,4 @@
-#include "pile.h"
+#include "../includes/pile.h"
 
 list_t *freestack(list_t *stack)
 {
@@ -25,7 +25,7 @@ list_t *push_stack(list_t *st, char *s)
     element->next = NULL;
 
     if (st == NULL)
-        return element;
+        return element;  // check video 
     tmp = st;
     while (tmp->next)
     {
@@ -33,6 +33,19 @@ list_t *push_stack(list_t *st, char *s)
     }
     tmp->next = element;
     return(st);
+}
+
+int    lengh_stack(list_t *st)
+{
+    int i;
+
+    i = 0;
+    while (st)
+    {
+        i++;
+        st = st->next;
+    }
+    return (i);
 }
 
 void printstack(list_t *stack)
