@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pile.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/05 23:25:59 by akram             #+#    #+#             */
+/*   Updated: 2022/12/05 23:40:26 by akram            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/pile.h"
 
-list_t *freestack(list_t *stack)
+t_list  *freestack(t_list *stack)
 {
-    list_t *tmp;
-
-    while(stack)
+    t_list *tmp;
+    
+    while (stack)
     {
         tmp = stack->next; // st pointant sur le maillon suivant sauvegarder dans tmp
         free(stack); // libere st (copie sauvegarder dans tmp)
@@ -13,42 +25,67 @@ list_t *freestack(list_t *stack)
     return(stack);
 }
 
-list_t *push_stack(list_t *st, char *s)
+t_list  *free_first_element(t_list *stack_a)
 {
-     list_t *element;
-     list_t *tmp;
-
-     element = malloc(sizeof(*element));
-     if (!element)
-         return 0;
-    element->nbr = ft_atoi(s); 
-    element->next = NULL;
-
-    if (st == NULL)
-        return element;  // check video 
-    tmp = st;
-    while (tmp->next)
-    {
-        tmp = tmp->next;
-    }
-    tmp->next = element;
-    return(st);
+    t_list *tmp;
+    
+    tmp = stack_a;
+    stack_a = tmp->next;
+        free(tmp);
+    return (stack_a);
 }
 
-int    lengh_stack(list_t *st)
+
+t_list  *create_element(int x)
+{
+    t_list *element;
+    
+    element = malloc(sizeof(*element));
+    if (!element)
+        return 0;
+    element->nbr = x;
+    element->next = NULL;
+    return (element);
+}
+
+t_list  *push_stack(t_list *stack_a, char *s)
+{
+    //t_list *element;
+     t_list *tmp;
+
+    tmp = stack_a;
+    if (!stack_a)
+        stack_a = create_element(ft_atoi(s));
+    else
+    {
+        tmp->next =  create_element(ft_atoi(s));
+        tmp = tmp->next;
+    }
+    // if (st == NULL)
+    //     return element; 
+    // tmp = st;
+    // while (tmp->next)
+    // {
+    //     tmp = tmp->next;
+    // }
+    // tmp->next = element;
+    return (stack_a);
+}
+
+int lengh_stack(t_list *stack_a)
 {
     int i;
 
     i = 0;
-    while (st)
+    while (stack_a)
     {
         i++;
-        st = st->next;
+        stack_a = stack_a->next;
     }
     return (i);
 }
 
-void printstack(list_t *stack)
+void printstack(t_list *stack)
 {
     while(stack)
     {

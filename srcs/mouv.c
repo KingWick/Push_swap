@@ -1,65 +1,81 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mouv.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/05 23:25:25 by akram             #+#    #+#             */
+/*   Updated: 2022/12/05 23:34:40 by akram            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/pile.h"
 
-list_t *swap(list_t *stack)
+t_list  *swap_a(t_list *stack_a)
 {
-	int tmp;
-
-    tmp = stack->nbr; 
-    stack->nbr = stack->next->nbr;
-    stack->next->nbr = tmp;
+    int tmp;
+    
+    tmp = stack_a->nbr;
+    stack_a->nbr = stack_a->next->nbr;
+    stack_a->next->nbr = tmp;
     ft_putstr("sa\n");
-    return (stack);
+    return (stack_a);
 }
 
-list_t *rotate(list_t *stack)
+t_list  *rotate_a(t_list *stack_a)
 {
-    if(!stack)
+    if (!stack_a)
         return NULL;
-    list_t *tmp;
-    list_t *head;
+    t_list *tmp;
+    t_list *head;
     
-    head = stack;
-    tmp = stack->next;
-    
-    while(stack->next)
+    head = stack_a;
+    tmp = stack_a->next;
+    while (stack_a->next)
     {
-        stack = stack->next;
+        stack_a = stack_a->next;
     }
-    stack->next = head;
+    stack_a->next = head;
     head->next = NULL;
     ft_putstr("ra\n");
-    return tmp;
+    return (tmp);
 }
 
-list_t *reverse_rotate(list_t *stack)
+t_list  *reverse_rotate_a(t_list *stack_a)
 {
-    if(!stack)
+    if (!stack_a)
         return NULL;
-    list_t    *dernier;
-    list_t    *avantder;
-
-    dernier = stack;
-    avantder = stack;
+    t_list    *dernier;
+    t_list    *avantder;
+    
+    dernier = stack_a;
+    avantder = stack_a;
     while (dernier->next)
     {
         dernier = dernier->next;
     }
     while (avantder->next->next)
-            avantder = avantder->next;
-    dernier->next = stack;
+        avantder = avantder->next;
+    dernier->next = stack_a;
     avantder->next = NULL;
     ft_putstr("rra\n");
     return (dernier);
 }
 
-list_t *push_st(list_t *stack_a, list_t *stack_b)
+t_list  *push_a(t_list *stack_a, t_list *stack_b)
 {
-    list_t *tmp;
-
-    tmp = stack_a;
-    stack_a = stack_a->next; 
-    tmp->next = stack_b;
-    stack_b = tmp;
-    ft_putstr("pb\n");
-    return stack_a;
+    t_list  *tmp;
+    
+    if (!stack_a)
+        stack_a = create_element(stack_b->nbr);
+    else 
+    {
+        tmp = stack_b;
+        stack_b = stack_b->next; 
+        tmp->next = stack_a;
+        stack_a = tmp;
+    }
+    ft_putstr("pa\n");
+    return (stack_a);
 }

@@ -1,3 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: akram <akram@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/12/05 23:25:06 by akram             #+#    #+#              #
+#    Updated: 2022/12/05 23:25:09 by akram            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
 NAME = push_swap
 
 INCLUDE = includes/ 
@@ -8,6 +21,8 @@ OBJS  = ${SRCS:.c=.o}
 
 SRCS = srcs/main.c \
 	   srcs/mouv.c \
+	   srcs/mouv2.c \
+	   srcs/mouv3.c \
 	   srcs/pile.c \
 	   srcs/pars.c \
 	   srcs/trie_stack.c \

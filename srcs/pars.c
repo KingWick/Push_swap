@@ -1,44 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pars.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/05 23:25:51 by akram             #+#    #+#             */
+/*   Updated: 2022/12/05 23:38:35 by akram            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "../includes/pile.h"
 
-int	ft_isdigit(int c)
+int ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
 
-int	check_doublon(list_t *st)
+int check_doublon(t_list *st)
 {
-	int stocknbr;
-	list_t  *list;
-	list_t  *element;
-	list_t  *compare;
+    int stocknbr;
+	t_list  *list;
+	t_list  *element;
+	t_list  *compare;
 
 	list = st;
 	element = st;
 	while (list)
 	{
-		stocknbr = list->nbr;
-		compare = element->next;
-		while (compare)
-		{
-			if (stocknbr == compare->nbr)
+        stocknbr = list->nbr;
+        compare = element->next;
+        while (compare)
+        {
+            if (stocknbr == compare->nbr)
             {
-				error(st);
+                error(st);
                 return 0;
             }
-			compare = compare->next;
-		}
-		list = list->next;
-		element = element->next; 
+            compare = compare->next;
+        }
+        list = list->next;
+        element = element->next; 
 	}
     return (0);
 }
 
 int parsing(char *av)
 {
-    int i;
-
+    long long i;
+    
     i = 0;
     while (av[i])
     {
@@ -48,12 +61,12 @@ int parsing(char *av)
             return 1;
         if (ft_isdigit(av[i]) == 0)
             return 1;
-            i++;
+        i++;
     }
-  return 0;
+    return (0);
 }
 
-int    check_order(list_t *st)
+int    check_order(t_list *st)
 {
     while (st->next)
     {
@@ -65,9 +78,9 @@ int    check_order(list_t *st)
     return (0);
 }
 
-void error(list_t *st)
+void    error(t_list *st)
 {
     write(2,"Error\n",6);
     freestack(st);
-    exit (EXIT_FAILURE);
+    exit(EXIT_FAILURE);
 }

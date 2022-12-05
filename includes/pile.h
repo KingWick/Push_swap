@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pile.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/05 23:23:50 by akram             #+#    #+#             */
+/*   Updated: 2022/12/05 23:23:50 by akram            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PILE_H
 # define PILE_H
 
@@ -6,42 +18,50 @@
 #include <unistd.h>
 #include <limits.h>
 
-typedef struct list_s
+typedef struct s_list
 {
-    int nbr;
-    struct list_s *next;
-}               list_t;
+    int  nbr;
+    struct s_list *next;
+}               t_list;
 
 //----Stack---//
-list_t *push_stack(list_t *st, char *s);
-list_t *freestack(list_t *st);
-int    lengh_stack(list_t *st);
-void   printstack(list_t *st);
+
+t_list  *create_element(int x);
+t_list  *push_stack(t_list *stack_a, char *s);
+t_list  *freestack(t_list *stack);
+t_list  *free_first_element(t_list *stack_a);
+int     lengh_stack(t_list *stack_a);
+void    printstack(t_list *stack);
 
 //--parsing--//
 
-int     check_order(list_t *st);
-int 	check_doublon(list_t *st);
+int     check_order(t_list *st);
+int     check_doublon(t_list *st);
 int     parsing(char *av);
-void    error(list_t *st);
+void    error(t_list *st);
 
 //------mouv-----//
 
-list_t *swap(list_t *stack);
-list_t *rotate(list_t *stack);
-list_t *reverse_rotate(list_t *stack);
-list_t *push_st(list_t *stack_a, list_t *stack_b);
+t_list  *push_a(t_list *stack_a, t_list *stack_b);
+t_list  *swap_a(t_list *stack_a);
+t_list  *rotate_a(t_list *stack_a);
+t_list  *reverse_rotate_a(t_list *stack_a);
+t_list  *push_b(t_list *stack_a, t_list *stack_b);
+t_list  *swap_b(t_list *stack_b);
+t_list  *rotate_b(t_list *stack_b);
+t_list  *reverse_rotate_b(t_list *stack_b);
+void    swap_a_b(t_list *stack_a, t_list *stack_b);
+void    rotate_a_b(t_list *stack_a, t_list *stack_b);
+void    reverse_rotate_a_b(t_list *stack_a, t_list *stack_b);
 
 //--------Trie------//
 
-void    sort_for_two(list_t *stack);
-void    sort_for_three(list_t *stack);
-
+void    sort_for_two(t_list *stack);
+void    sort_for_three(t_list *stack);
 
 //----toolbox-----//
 
-long ft_atoi(char *str);
-void ft_putstr(char *str);
-
+long    ft_atoi(char *str);
+void    ft_putstr(char *str);
 
 #endif

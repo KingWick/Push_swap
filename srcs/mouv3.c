@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   trie_stack.c                                       :+:      :+:    :+:   */
+/*   mouv3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 23:26:05 by akram             #+#    #+#             */
-/*   Updated: 2022/12/05 23:26:08 by akram            ###   ########.fr       */
+/*   Created: 2022/12/05 23:24:24 by akram             #+#    #+#             */
+/*   Updated: 2022/12/05 23:33:34 by akram            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+
 #include "../includes/pile.h"
 
-void    sort_for_two(t_list *stack)
+void    swap_a_b(t_list *stack_a, t_list *stack_b)
 {
-    if (stack->nbr > stack->next->nbr)
-        swap_a(stack);
+    swap_a(stack_a);
+    swap_b(stack_b);
 }
 
-// void    trie_for_three(t_list *stack)
-// {
-//     if (stack->nbr > stack->next->nbr)
-//         swap(stack);
-// }
+void    rotate_a_b(t_list *stack_a, t_list *stack_b)
+{
+    rotate_a(stack_a);
+    rotate_b(stack_b);
+}
+
+void    reverse_rotate_a_b(t_list *stack_a, t_list *stack_b)
+{
+    reverse_rotate_a(stack_a);
+    reverse_rotate_b(stack_b);
+}
