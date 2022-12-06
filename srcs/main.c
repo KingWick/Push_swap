@@ -50,8 +50,9 @@ int main(int ac, char **av)
     //stack_a = rotate_a(stack_a);
     //stack_a = swap_a(stack_a);
     //stack_a = reverse_rotate_a(stack_a);
-    stack_b = push_b(stack_a,stack_b);
-    stack_a = free_first_element(stack_a);
+    //stack_b = push_b(stack_a,stack_b);
+    //stack_a = free_first_element(stack_a);
+
     printf("Stack-A == ");
     printstack(stack_a);
     printf("\nStack-B == ");
