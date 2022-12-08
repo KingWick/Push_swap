@@ -12,48 +12,52 @@
 
 #include "../includes/pile.h"
 
-
-t_list  *start(t_list *stack_a, char **av, int ac)
+t_list	*start(t_list *stack_a, char **av, int ac)
 {
-    int i = 1;
-    t_list *tmp = NULL;
+	t_list	*tmp;
+	int		i;
 
-    while (i < ac)
-    {
-        if(parsing(av[i]) == 1)
-            error(stack_a);
-        if(!stack_a)
-     {
-         stack_a = create_element(ft_atoi(av[i]));
-         tmp = stack_a;
-     }
-    else
-    {
-        tmp->next =  create_element(ft_atoi(av[i]));
-        tmp = tmp->next;
-    }
-        i++;
-    }
-    check_order(stack_a);
-    check_doublon(stack_a);
-    return (stack_a);
+	i = 1;
+	while (i < ac)
+	{
+		if (parsing(av[i]) == 1)
+			error(stack_a);
+		if (!stack_a)
+		{
+			stack_a = create_element(ft_atoi(av[i]));
+			tmp = stack_a;
+		}
+		else
+		{
+			tmp->next = create_element(ft_atoi(av[i]));
+			tmp = tmp->next;
+		}
+		i++;
+	}
+	lengh_stack(stack_a);
+	check_order(stack_a);
+	check_doublon(stack_a);
+	return (stack_a);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    t_list *stack_a = NULL;
     //t_list *stack_b = NULL;
-    int size = 0;
+    t_list	*stack_a;
+    int		size;
 
-    if (ac < 2)
-        return 0;
-    stack_a = start(stack_a, av, ac);
-    stack_a = reverse_rotate_a(stack_a);
-    printstack(stack_a);
-    if (size == 2)
-        stack_a = sort_for_two(stack_a);
-    if (size == 3)
-        stack_a = sort_for_three(stack_a);
-    stack_a = freestack(stack_a);
-    return 0;
+	stack_a = NULL;
+	if (ac < 2)
+		return (0);
+	stack_a = start(stack_a, av, ac);
+	size = lengh_stack(stack_a);
+	if (size == 2)
+		stack_a = sort_for_two(stack_a);
+	if (size == 3)
+	{
+		stack_a = sort_for_three(stack_a);
+	}
+	printstack(stack_a);
+	stack_a = freestack(stack_a);
+	return (0);
 }
