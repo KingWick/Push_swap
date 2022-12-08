@@ -47,7 +47,7 @@ int	main(int ac, char **av)
     int		size;
 
 	stack_a = NULL;
-	if (ac < 2)
+	if (ac <= 2)
 		return (0);
 	stack_a = start(stack_a, av, ac);
 	size = lengh_stack(stack_a);
