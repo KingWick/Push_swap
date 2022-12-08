@@ -26,8 +26,8 @@ typedef	struct s_list
 
 //----Stack---//
 
+t_list  *start(t_list *stack_a, char **av, int ac);
 t_list	*create_element(int x);
-t_list	*push_stack(t_list *stack_a, char *s);
 t_list	*freestack(t_list *stack);
 t_list	*free_first_element(t_list *stack_a);
 int		lengh_stack(t_list *stack_a);
@@ -56,8 +56,8 @@ void	reverse_rotate_a_b(t_list *stack_a, t_list *stack_b);
 
 //--------Trie------//
 
-void	sort_for_two(t_list *stack);
-void	sort_for_three(t_list *stack);
+t_list	*sort_for_two(t_list *stack);
+t_list	*sort_for_three(t_list *stack);
 
 //----toolbox-----//
 
