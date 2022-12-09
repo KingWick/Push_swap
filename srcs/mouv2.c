@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouv2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
+/*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:25:17 by akram             #+#    #+#             */
-/*   Updated: 2022/12/07 19:12:00 by akram            ###   ########.fr       */
+/*   Updated: 2022/12/09 14:23:48 by akdjebal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_list	*push_b(t_list *stack_a, t_list *stack_b)
 	{
 		tmp = stack_a;
 		stack_a = stack_a->next;
-		tmp->next = stack_b;
+		tmp->next = stack_b; //revoir cette etape dans le cas ou B a deja du contenue
 		stack_b = tmp;
 	}
 	ft_putstr("pb\n");

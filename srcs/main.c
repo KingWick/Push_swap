@@ -51,6 +51,8 @@ int	main(int ac, char **av)
 		return (0);
 	stack_a = start(stack_a, av, ac);
 	size = lengh_stack(stack_a);
+	max_element(stack_a);
+	min_element(stack_a);
 	if (size == 2)
 		stack_a = sort_for_two(stack_a);
 	if (size == 3)

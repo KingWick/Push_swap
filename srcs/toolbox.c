@@ -6,7 +6,7 @@
 /*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:23:11 by akram             #+#    #+#             */
-/*   Updated: 2022/12/06 14:45:03 by akdjebal         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:41:57 by akdjebal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,54 @@ long	ft_atoi(char *str)
 		str++;
 	}
 	return (result * sign);
+}
+
+int min_element(t_list *stack)
+{
+	int i;
+	int stock;
+	t_list *tmp;
+	
+	i = 1;
+	tmp = stack;
+	stock = stack->nbr;
+	while (stack)
+	{
+		if (stack->nbr < stock)
+			stock = stack->nbr;
+		stack = stack->next;
+	}
+	while (tmp->nbr != stock)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	printf("element le plus petit == %d\n", stock);
+	printf("%d", i);
+	return (i);
+}
+
+int max_element(t_list *stack)
+{
+	int i;
+	int stock;
+	t_list *tmp;
+	
+	i = 1;
+	tmp = stack;
+	stock = stack->nbr;
+	while (stack)
+	{
+		if (stack->nbr > stock)
+			stock = stack->nbr;
+		stack = stack->next;
+	}
+	while (tmp->nbr != stock)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	printf("\nelement le plus grand == %d\n", stock);
+	printf("%d", i);
+	return (i);
 }
