@@ -59,6 +59,8 @@ void	reverse_rotate_a_b(t_list *stack_a, t_list *stack_b);
 t_list	*sort_for_two(t_list *stack);
 t_list	*sort_for_three(t_list *stack);
 t_list	*sort_for_four(t_list *stack);
+void    sortList(t_list *stack);
+
 
 //----toolbox-----//
 
@@ -66,5 +68,6 @@ long	ft_atoi(char *str);
 void	ft_putstr(char *str);
 int		min_element(t_list *stack);
 int		max_element(t_list *stack);
+int		max_element_for_four(t_list *stack);
 
 #endif

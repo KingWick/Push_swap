@@ -59,6 +59,10 @@ int	main(int ac, char **av)
 	{
 		stack_a = sort_for_three(stack_a);
 	}
+	if (size == 4)
+	{
+		sortList(stack_a);
+	}
 	printstack(stack_a);
 	stack_a = freestack(stack_a);
 	return (0);
