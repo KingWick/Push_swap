@@ -54,20 +54,20 @@ void	swap_a_b(t_list *stack_a, t_list *stack_b);
 void	rotate_a_b(t_list *stack_a, t_list *stack_b);
 void	reverse_rotate_a_b(t_list *stack_a, t_list *stack_b);
 
-//--------Trie------//
+//--------Sort------//
 
 t_list	*sort_for_two(t_list *stack);
 t_list	*sort_for_three(t_list *stack);
-t_list	*sort_for_four(t_list *stack);
-void    sortList(t_list *stack);
-
+t_list	*sort_for_four(t_list *stack, t_list *stack_b);
+t_list	*sort_for_five(t_list *stack, t_list *stack_b);
 
 //----toolbox-----//
 
+t_list  *min_to_top(t_list *stack);
+t_list  *max_to_top(t_list *stack);
+int	    search_min(t_list *stack);
+int	    search_max(t_list *stack);
 long	ft_atoi(char *str);
 void	ft_putstr(char *str);
-int		min_element(t_list *stack);
-int		max_element(t_list *stack);
-int		max_element_for_four(t_list *stack);
 
 #endif

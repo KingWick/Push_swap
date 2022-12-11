@@ -6,7 +6,7 @@
 #    By: akram <akram@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 23:25:06 by akram             #+#    #+#              #
-#    Updated: 2022/12/05 23:25:09 by akram            ###   ########.fr        #
+#    Updated: 2022/12/11 20:42:46 by akram            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRCS = srcs/main.c \
 	   srcs/pile.c \
 	   srcs/pars.c \
 	   srcs/trie_stack.c \
-	   srcs/toolbox.c
+	   srcs/toolbox.c \
+	   srcs/toolbox2.c
 
 %.o:%.c
 	@gcc $(FLAGS) -I $(INCLUDE) -c $< -o $@

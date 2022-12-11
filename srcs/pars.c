@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:25:51 by akram             #+#    #+#             */
-/*   Updated: 2022/12/06 14:35:28 by akdjebal         ###   ########.fr       */
+/*   Updated: 2022/12/11 22:03:48 by akram            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ int	check_order(t_list *st)
 		if (st->nbr < st->next->nbr && st->next != NULL)
 			st = st->next;
 		else
-			return (1);
+			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 void	error(t_list *st)
 {
 	write(2, "Error\n", 6);
 	freestack(st);
-	exit(EXIT_FAILURE);
+	exit(1);
 }

@@ -34,7 +34,6 @@ t_list	*start(t_list *stack_a, char **av, int ac)
 		}
 		i++;
 	}
-	lengh_stack(stack_a);
 	check_order(stack_a);
 	check_doublon(stack_a);
 	return (stack_a);
@@ -42,7 +41,7 @@ t_list	*start(t_list *stack_a, char **av, int ac)
 
 int	main(int ac, char **av)
 {
-    //t_list *stack_b = NULL;
+    t_list *stack_b = NULL;
     t_list	*stack_a;
     int		size;
 
@@ -51,8 +50,6 @@ int	main(int ac, char **av)
 		return (0);
 	stack_a = start(stack_a, av, ac);
 	size = lengh_stack(stack_a);
-	max_element(stack_a);
-	min_element(stack_a);
 	if (size == 2)
 		stack_a = sort_for_two(stack_a);
 	if (size == 3)
@@ -61,9 +58,13 @@ int	main(int ac, char **av)
 	}
 	if (size == 4)
 	{
-		sortList(stack_a);
+		stack_a = sort_for_four(stack_a, stack_b);
 	}
-	printstack(stack_a);
+	if (size == 5)
+	{
+		stack_a = sort_for_five(stack_a, stack_b);
+	}
+	//printstack(stack_a);
 	stack_a = freestack(stack_a);
 	return (0);
 }
