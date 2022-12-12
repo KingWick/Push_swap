@@ -60,6 +60,8 @@ t_list	*sort_for_two(t_list *stack);
 t_list	*sort_for_three(t_list *stack);
 t_list	*sort_for_four(t_list *stack, t_list *stack_b);
 t_list	*sort_for_five(t_list *stack, t_list *stack_b);
+t_list	*ultime_sort(t_list *stack, t_list *stack_b);
+
 
 //----toolbox-----//
 

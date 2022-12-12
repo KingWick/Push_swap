@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouv.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
+/*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:25:25 by akram             #+#    #+#             */
-/*   Updated: 2022/12/07 19:03:40 by akram            ###   ########.fr       */
+/*   Updated: 2022/12/12 11:47:52 by akdjebal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,7 @@ t_list	*push_a(t_list *stack_a, t_list *stack_b)
 		stack_a = create_element(stack_b->nbr);
 	else
 	{
-		tmp = stack_b;
-		stack_b = stack_b->next;
+		tmp = create_element(stack_b->nbr);
 		tmp->next = stack_a;
 		stack_a = tmp;
 	}

@@ -34,7 +34,6 @@ t_list	*start(t_list *stack_a, char **av, int ac)
 		}
 		i++;
 	}
-	check_order(stack_a);
 	check_doublon(stack_a);
 	return (stack_a);
 }
@@ -64,6 +63,10 @@ int	main(int ac, char **av)
 	{
 		stack_a = sort_for_five(stack_a, stack_b);
 	}
+	// if (size > 5)
+	// {
+	// 	stack_a = ultime_sort(stack_a, stack_b);
+	// }
 	//printstack(stack_a);
 	stack_a = freestack(stack_a);
 	return (0);

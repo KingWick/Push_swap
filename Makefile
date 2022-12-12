@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: akram <akram@student.42.fr>                +#+  +:+       +#+         #
+#    By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 23:25:06 by akram             #+#    #+#              #
-#    Updated: 2022/12/11 20:42:46 by akram            ###   ########.fr        #
+#    Updated: 2022/12/12 14:03:47 by akdjebal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS = srcs/main.c \
 	   srcs/pars.c \
 	   srcs/trie_stack.c \
 	   srcs/toolbox.c \
-	   srcs/toolbox2.c
+	   srcs/toolbox2.c \
+	   srcs/trie_ultime.c 
 
 %.o:%.c
 	@gcc $(FLAGS) -I $(INCLUDE) -c $< -o $@
