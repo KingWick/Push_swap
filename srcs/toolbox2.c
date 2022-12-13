@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   toolbox2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
+/*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 20:43:23 by akram             #+#    #+#             */
-/*   Updated: 2022/12/11 22:09:07 by akram            ###   ########.fr       */
+/*   Updated: 2022/12/13 15:35:00 by akdjebal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pile.h"
 
-t_list *min_to_top(t_list *stack)
+t_list	*min_to_top(t_list *stack)
 {
 	int	posmin;
 	int	size;
@@ -32,7 +32,7 @@ t_list *min_to_top(t_list *stack)
 	return (stack);
 }
 
-t_list *max_to_top(t_list *stack)
+t_list	*max_to_top(t_list *stack)
 {
 	int	posmin;
 	int	size;

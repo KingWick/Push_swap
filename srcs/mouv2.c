@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouv2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
+/*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:25:17 by akram             #+#    #+#             */
-/*   Updated: 2022/12/12 19:03:13 by akram            ###   ########.fr       */
+/*   Updated: 2022/12/13 15:33:25 by akdjebal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ t_list	*reverse_rotate_b(t_list *stack_b)
 
 t_list	*push_b(t_list *stack_a, t_list *stack_b)
 {
-	t_list *tmp;
-	
+	t_list	*tmp;
+
 	if (!stack_b)
 		stack_b = create_element(stack_a->nbr);
 	else

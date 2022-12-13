@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   trie_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
+/*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:26:05 by akram             #+#    #+#             */
-/*   Updated: 2022/12/12 18:14:58 by akram            ###   ########.fr       */
+/*   Updated: 2022/12/13 15:37:17 by akdjebal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,12 @@ t_list	*sort_for_four(t_list *stack, t_list *stack_b)
 	if (check_order(stack))
 		return (stack);
 	stack = min_to_top(stack);
-	stack_b = push_b(stack,stack_b);
+	stack_b = push_b(stack, stack_b);
 	stack = free_first_element(stack);
 	stack = sort_for_three(stack);
-	stack = push_a(stack,stack_b); 
+	stack = push_a(stack, stack_b);
 	stack_b = free_first_element(stack_b);
-	return(stack);
+	return (stack);
 }
 
 t_list	*sort_for_five(t_list *stack, t_list *stack_b)
