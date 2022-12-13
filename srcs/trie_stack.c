@@ -6,7 +6,7 @@
 /*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:26:05 by akram             #+#    #+#             */
-/*   Updated: 2022/12/13 15:37:17 by akdjebal         ###   ########.fr       */
+/*   Updated: 2022/12/13 17:10:25 by akdjebal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,6 @@ t_list	*sort_for_three(t_list *stack)
 
 t_list	*sort_for_four(t_list *stack, t_list *stack_b)
 {
-	if (check_order(stack))
-		return (stack);
 	stack = min_to_top(stack);
 	stack_b = push_b(stack, stack_b);
 	stack = free_first_element(stack);
@@ -84,8 +82,6 @@ t_list	*sort_for_four(t_list *stack, t_list *stack_b)
 
 t_list	*sort_for_five(t_list *stack, t_list *stack_b)
 {
-	if (check_order(stack))
-		return (stack);
 	stack = min_to_top(stack);
 	stack_b = push_b(stack, stack_b);
 	stack = free_first_element(stack);

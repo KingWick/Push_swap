@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: akram <akram@student.42.fr>                +#+  +:+       +#+         #
+#    By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 23:25:06 by akram             #+#    #+#              #
-#    Updated: 2022/12/12 16:20:45 by akram            ###   ########.fr        #
+#    Updated: 2022/12/13 15:38:01 by akdjebal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 
 INCLUDE = includes/ 
 
-FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror 
 
 OBJS  = ${SRCS:.c=.o}
 
