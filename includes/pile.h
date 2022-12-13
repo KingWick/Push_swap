@@ -60,13 +60,18 @@ t_list	*sort_for_two(t_list *stack);
 t_list	*sort_for_three(t_list *stack);
 t_list	*sort_for_four(t_list *stack, t_list *stack_b);
 t_list	*sort_for_five(t_list *stack, t_list *stack_b);
-t_list	*ultime_sort(t_list *stack, t_list *stack_b);
+t_list	*ultime_sort(t_list *stack, t_list *stack_b, int size);
 
 
 //----toolbox-----//
 
 t_list  *min_to_top(t_list *stack);
 t_list  *max_to_top(t_list *stack);
+t_list	*max_sort_top2(t_list *stack_b, int posmax, int size); // mettre un nom plus explicif  
+t_list	*max_sort_top(t_list *stack_a, t_list *stack_b); // mettre un nom plus explicif
+int	    *value_sort(int *tab, int len); // mettre un nom plus explicif  
+int	    *tab_int(t_list *stack, int size);
+int	    have_pivot(t_list *stack, int *tab, int size);
 int	    search_min(t_list *stack);
 int	    search_max(t_list *stack);
 long	ft_atoi(char *str);

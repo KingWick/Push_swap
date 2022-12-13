@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouv.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:25:25 by akram             #+#    #+#             */
-/*   Updated: 2022/12/12 11:47:52 by akdjebal         ###   ########.fr       */
+/*   Updated: 2022/12/12 19:26:50 by akram            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ t_list	*rotate_a(t_list *stack_a)
 
 	if (!stack_a)
 		return (NULL);
+	if (lengh_stack(stack_a) == 1)
+		return stack_a;
 	head = stack_a;
 	tmp = stack_a->next;
 	while (stack_a->next)

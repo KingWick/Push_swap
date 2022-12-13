@@ -20,8 +20,8 @@ t_list	*start(t_list *stack_a, char **av, int ac)
 	i = 1;
 	while (i < ac)
 	{
-		if (parsing(av[i]) == 1)
-			error(stack_a);
+		//if (parsing(av[i]) == 1)
+		//	error(stack_a);
 		if (!stack_a)
 		{
 			stack_a = create_element(ft_atoi(av[i]));
@@ -52,22 +52,14 @@ int	main(int ac, char **av)
 	if (size == 2)
 		stack_a = sort_for_two(stack_a);
 	if (size == 3)
-	{
 		stack_a = sort_for_three(stack_a);
-	}
 	if (size == 4)
-	{
 		stack_a = sort_for_four(stack_a, stack_b);
-	}
 	if (size == 5)
-	{
 		stack_a = sort_for_five(stack_a, stack_b);
-	}
-	// if (size > 5)
-	// {
-	// 	stack_a = ultime_sort(stack_a, stack_b);
-	// }
-	//printstack(stack_a);
+	if (size > 5)
+		stack_a = ultime_sort(stack_a, stack_b, size);
+	printstack(stack_a);
 	stack_a = freestack(stack_a);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pile.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akram <akram@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:25:59 by akram             #+#    #+#             */
-/*   Updated: 2022/12/12 11:24:06 by akdjebal         ###   ########.fr       */
+/*   Updated: 2022/12/12 18:56:00 by akram            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,5 @@ void	printstack(t_list *stack)
 		printf("[%d]->", stack->nbr);
 		stack = stack->next;
 	}
+	printf("\n");
 }
