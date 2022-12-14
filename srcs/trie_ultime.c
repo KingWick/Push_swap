@@ -6,7 +6,7 @@
 /*   By: akdjebal <akdjebal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:58:12 by akdjebal          #+#    #+#             */
-/*   Updated: 2022/12/13 15:44:03 by akdjebal         ###   ########.fr       */
+/*   Updated: 2022/12/14 17:59:31 by akdjebal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,16 @@ int	have_pivot(t_list *stack, int *tab, int size)
 	int	index;
 	int	pivot;
 
-	tab = tab_int(stack, size); // pk 2 assimilation sur une variable
+	tab = tab_int(stack, size);
 	tab = value_sort(tab, size);
 	if (size >= 500)
 		index = size / 7;
 	else
 		index = size / 5;
 	pivot = tab[index];
-	free(tab); // pk ne pas utilise un de nos free ?
+	free(tab);
 	return (pivot);
 }
-
 
 t_list	*ultime_sort(t_list *stack, t_list *stack_b, int size)
 {
@@ -36,8 +35,6 @@ t_list	*ultime_sort(t_list *stack, t_list *stack_b, int size)
 	t_list	*tmp;
 
 	tab = NULL;
-    if (check_order(stack))
-		return (stack);
 	while (stack)
 	{
 		tmp = stack;
@@ -55,8 +52,7 @@ t_list	*ultime_sort(t_list *stack, t_list *stack_b, int size)
 		}
 		stack = tmp;
 		size = lengh_stack(stack);
-    }
+	}
 	stack = max_sort_top(stack, stack_b);
 	return (stack);
 }
-

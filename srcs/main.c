@@ -62,7 +62,6 @@ int	main(int ac, char **av)
 		stack_a = sort_for_five(stack_a, stack_b);
 	if (size > 5)
 		stack_a = ultime_sort(stack_a, stack_b, size);
-	//printstack(stack_a);
 	stack_a = freestack(stack_a);
 	return (0);
 }

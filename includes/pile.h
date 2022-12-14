@@ -13,20 +13,20 @@
 #ifndef PILE_H
 # define PILE_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <limits.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <limits.h>
 
-typedef	struct s_list
+typedef struct s_list
 {
 	int				nbr;
-    struct	s_list *next;
+	struct s_list	*next;
 }				t_list;
 
 //----Stack---//
 
-t_list  *start(t_list *stack_a, char **av, int ac);
+t_list	*start(t_list *stack_a, char **av, int ac);
 t_list	*create_element(int x);
 t_list	*freestack(t_list *stack);
 t_list	*free_first_element(t_list *stack_a);
@@ -62,18 +62,17 @@ t_list	*sort_for_four(t_list *stack, t_list *stack_b);
 t_list	*sort_for_five(t_list *stack, t_list *stack_b);
 t_list	*ultime_sort(t_list *stack, t_list *stack_b, int size);
 
-
 //----toolbox-----//
 
-t_list  *min_to_top(t_list *stack);
-t_list  *max_to_top(t_list *stack);
-t_list	*max_sort_top2(t_list *stack_b, int posmax, int size); // mettre un nom plus explicif  
-t_list	*max_sort_top(t_list *stack_a, t_list *stack_b); // mettre un nom plus explicif
-int	    *value_sort(int *tab, int len); // mettre un nom plus explicif  
-int	    *tab_int(t_list *stack, int size);
-int	    have_pivot(t_list *stack, int *tab, int size);
-int	    search_min(t_list *stack);
-int	    search_max(t_list *stack);
+t_list	*min_to_top(t_list *stack);
+t_list	*max_to_top(t_list *stack);
+t_list	*max_sort_top2(t_list *stack_b, int posmax, int size);
+t_list	*max_sort_top(t_list *stack_a, t_list *stack_b);
+int		*value_sort(int *tab, int len);
+int		*tab_int(t_list *stack, int size);
+int		have_pivot(t_list *stack, int *tab, int size);
+int		search_min(t_list *stack);
+int		search_max(t_list *stack);
 long	ft_atoi(char *str);
 void	ft_putstr(char *str);
 
